@@ -1,0 +1,37 @@
+.customerDetails-container {
+    position: absolute;
+    top: 250px;
+    left: 690px; /* Center horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    width: 600px; /* Adjust width as needed */
+    background-color: #f0f0f0d3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.customerDetails-label {
+    color: #d9a23d;
+}
+
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #d9a23d;
+    outline: none;
+}
+
+.customerDetails-buttonGroup {
+    margin-top: 20px;
+}

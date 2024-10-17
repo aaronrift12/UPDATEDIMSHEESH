@@ -1,0 +1,211 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.section {
+  min-height: calc(100vh - 80px); /* Subtract the footer height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Change the background of the services section to white */
+.section.services {
+  background-color: white; /* Updated background to white */
+  padding: 20px;
+  margin-top: -20px; /* Adjust this value as needed */
+  text-align: center;
+}
+
+.nav {
+  position: absolute;
+  top: 50px;
+  right: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-link {
+  color: white !important;
+  text-decoration: none;
+  font-size: 17px !important;
+  transition: color 0.3s ease;
+  margin-right: 40px;
+}
+
+.nav-link:hover {
+  color: #d9a23d !important;
+}
+
+.create-button {
+  background-color: rgb(0, 0, 0) !important;
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  font-size: 1.0em;
+  cursor: pointer;
+  border-radius: 5px;
+  position: absolute; /* Change back to absolute */
+  right: 1525px; 
+  top: 60%; /* Adjust this as needed */
+  width: 280px; /* Set a fixed width */
+  transition: transform 0.3s ease;
+}
+
+.create-button:hover {
+  color: #d9a23d;
+  transform: scale(1.1);
+}
+
+h2 {
+  font-size: 2.5em;
+  font-weight: 900;
+}
+
+.highlight {
+  color: #d9a23d;
+}
+
+.service-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.service {
+  margin: 20px;
+  padding: 0;
+  background-color: white;
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+  width: 200px;
+  height: 250px;
+  transition: transform 0.2s;
+  text-align: center;
+  overflow: hidden;
+}
+
+.service img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+}
+
+.service p {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.service:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  position: relative; /* Changed to relative */
+  bottom: 0;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px; /* Add margin for spacing */
+}
+
+.profile-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 30px;
+}
+
+.profile-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* About and Contact Section Styles */
+.about-container {
+  display: flex;
+  width: 100%;
+  max-width: 1400px; /* Adjust as necessary */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.about-content,
+.contact-content {
+  flex: 1;
+  margin: 0 70px; /* Space between columns */
+  margin-top: 250px;
+}
+
+.about-content h2,
+.contact-content h2 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #ffffff;
+  position: absolute;
+  top: 450px;
+}
+
+.about-text {
+  text-align: justify;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #ffffff; /* Darker text color */
+}
+
+.contact-content p {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  color: #ffffff;
+}
+
+.contact-icon {
+  margin-right: 10px; /* Space between icon and text */
+}
+
+/* Custom styles for the Services title */
+.services-title {
+  font-family: 'Arial', sans-serif; /* Change this to your desired font */
+  font-size: 2.5em; /* Change this to your desired font size */
+  font-weight: bold; /* You can adjust the weight if needed */
+  margin-bottom: 20px; /* Optional: add space below the title */
+  color: #333; /* Optional: set a color for the title */
+}
+
+.highlight {
+  color: #d9a23d; /* Keep your highlight color */
+}

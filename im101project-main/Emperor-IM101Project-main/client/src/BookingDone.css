@@ -1,0 +1,60 @@
+.booking-done-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000; /* Black background */
+}
+
+.booking-done-box {
+    text-align: center;
+    background-color: #333; /* Dark gray for box background */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+}
+
+.booking-done-header {
+    font-size: 24px;
+    color: #d9a23d; /* Gold color for header */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.booking-done-message {
+    font-size: 18px;
+    color: #d9a23d; /* Gold color for message text */
+    margin-bottom: 20px; /* Space below the message */
+}
+
+.done-button {
+    padding: 10px 20px;
+    background-color: #d9a23d; /* Gold color for button */
+    color: #ffffff; /* Black text color for contrast */
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.done-button:hover {
+    background-color: #d9a23d; /* Darker gold on hover */
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .booking-done-box {
+        padding: 20px;
+    }
+
+    .booking-done-header {
+        font-size: 20px;
+    }
+
+    .booking-done-message {
+        font-size: 16px;
+    }
+}

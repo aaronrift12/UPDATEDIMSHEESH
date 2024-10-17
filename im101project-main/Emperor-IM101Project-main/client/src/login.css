@@ -1,0 +1,61 @@
+/* Login.css */
+
+body {
+    background-color: #121212; /* Dark background */
+    color: #fff; /* White text color */
+    font-family: 'Arial', sans-serif; /* Font family */
+}
+
+.login-container {
+    position: absolute;
+    top: 300px;
+    left: 730px; /* Center horizontally */
+    width: 400px; /* Set a fixed width */
+    margin: auto; /* Center the container */
+    padding: 30px; /* Padding inside the container */
+    background-color: #ffffff; /* Slightly lighter background for the container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Box shadow for depth */
+}
+
+h2 {
+    text-align: center; /* Centered heading */
+    margin-bottom: 20px; /* Margin below the heading */
+    font-size: 24px; /* Heading size */
+    color: #d9a23d; /* Gold color for the heading */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding inside inputs */
+    margin: 10px 0; /* Margin for spacing */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #ffffff; /* Dark background for inputs */
+    color: #000000; /* White text */
+    font-size: 16px; /* Input text size */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+
+
+button {
+    width: 100%; /* Full width button */
+    padding: 10px; /* Padding inside the button */
+    margin-top: 15px; /* Margin above the button */
+    background-color: #d9a23d; /* Gold background */
+    color: #121212; /* Dark text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Button text size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+button:hover {
+    background-color: #d9a23d; /* Lighter gold on hover */
+}
+
+p {
+    text-align: center; /* Centered error message */
+}

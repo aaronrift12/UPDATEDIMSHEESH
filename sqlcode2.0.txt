@@ -1,0 +1,113 @@
+CREATE DATABASE IF NOT EXISTS crud;
+USE crud;
+
+-- Drop existing tables to avoid conflicts
+DROP TABLE IF EXISTS Payment;
+DROP TABLE IF EXISTS Billing;
+DROP TABLE IF EXISTS Booking;
+DROP TABLE IF EXISTS Services;
+DROP TABLE IF EXISTS Staff;
+DROP TABLE IF EXISTS Customer;
+DROP TABLE IF EXISTS admin;
+DROP TABLE IF EXISTS Income; -- Added Income table drop
+
+-- Create Customer table
+CREATE TABLE Customer (
+  customerID INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  contactNo VARCHAR(15) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  PRIMARY KEY (customerID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Create Staff table
+CREATE TABLE Staff (
+  staffID INT NOT NULL AUTO_INCREMENT,
+  staffName VARCHAR(255) NOT NULL,
+  PRIMARY KEY (staffID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Create Services table
+CREATE TABLE Services (
+  serviceID INT NOT NULL AUTO_INCREMENT,
+  staffID INT NOT NULL,
+  serviceType VARCHAR(255) NOT NULL,
+  servicePrice DECIMAL(10, 2) NOT NULL,
+  PRIMARY KEY (serviceID),
+  FOREIGN KEY (staffID) REFERENCES Staff(staffID) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Create Booking table with staffID
+CREATE TABLE Booking (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    customerID INT NOT NULL,
+    serviceID INT NOT NULL,
+    staffID INT NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    contactNo VARCHAR(50) NOT NULL,
+    date DATE NOT NULL,
+    time TIME NOT NULL,
+    paymentMethod VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    status VARCHAR(20) DEFAULT 'Pending', -- Added status column
+    FOREIGN KEY (customerID) REFERENCES Customer(customerID) ON DELETE CASCADE,
+    FOREIGN KEY (serviceID) REFERENCES Services(serviceID) ON DELETE CASCADE,
+    FOREIGN KEY (staffID) REFERENCES Staff(staffID) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Create Billing table
+CREATE TABLE Billing (
+  billingID INT NOT NULL AUTO_INCREMENT,
+  staffID INT NOT NULL,
+  customerID INT NOT NULL,
+  PRIMARY KEY (billingID),
+  FOREIGN KEY (staffID) REFERENCES Staff(staffID) ON DELETE CASCADE,
+  FOREIGN KEY (customerID) REFERENCES Customer(customerID) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Create Payment table
+CREATE TABLE Payment (
+  paymentID INT NOT NULL AUTO_INCREMENT,
+  billingID INT NOT NULL,
+  customerID INT NOT NULL,
+  billingDate DATE NOT NULL,
+  totalPrice DECIMAL(10, 2) NOT NULL,
+  PRIMARY KEY (paymentID),
+  FOREIGN KEY (billingID) REFERENCES Billing(billingID) ON DELETE CASCADE,
+  FOREIGN KEY (customerID) REFERENCES Customer(customerID) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Create Income table to track total income
+CREATE TABLE Income (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  totalIncome DECIMAL(10, 2) DEFAULT 0.00
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Create admin table
+CREATE TABLE admin (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Insert sample data into Staff table
+INSERT INTO Staff (staffName) 
+VALUES 
+    ('Karl'), 
+    ('Ham'), 
+    ('Benjie');
+
+-- Insert sample data into Services table
+INSERT INTO Services (staffID, serviceType, servicePrice) 
+VALUES 
+    (1, 'haircut', 400.00), 
+    (1, 'shampoo', 450.00), 
+    (1, 'massage', 500.00), 
+    (1, 'hot towel', 400.00), 
+    (1, 'blow dry', 500.00);
+
+-- Insert initial record into Income table
+INSERT INTO Income (totalIncome) VALUES (0.00);
+
+-- Commit the transaction
+COMMIT;

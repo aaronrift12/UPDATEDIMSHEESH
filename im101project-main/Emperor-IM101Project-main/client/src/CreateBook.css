@@ -1,0 +1,123 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.formGroup {
+    margin-bottom: 15px;
+}
+
+.label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.input, 
+.select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.time-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.time-slot {
+    padding: 10px;
+    text-align: center;
+    background-color: #333; /* Default dark background for time slots */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.time-slot:hover {
+    background-color: #d1d1d1; /* Change color on hover for available times */
+}
+
+.time-slot.selected {
+    background-color: #d9a23d;
+    color: white;
+}
+
+.time-slot.disabled {
+    background-color: #666; /* Gray background for disabled slots */
+    color: #ccc; /* Lighter gray text */
+    cursor: not-allowed; /* Not allowed cursor */
+    pointer-events: none; /* Prevent interaction */
+}
+
+.time-slot.disabled:hover {
+    background-color: #666; /* Prevent hover effect on disabled */
+}
+
+.button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #000000 !important;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.loading-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+.booked-indicator {
+    color: #fff; /* White text for clarity */
+    font-size: 0.8em; /* Smaller size for the indicator */
+    margin-left: 5px; /* Space between time and indicator */
+}
+
+.formGroup label {
+    color: #d9a23d; /* Change this to your desired color */
+    margin: 10px;
+    font-size: 16px; /* Optional: Adjust font size if needed */
+}
+
+.timeDatePayment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: flex-start; /* Align items to the top */
+    padding-top: 50px; /* Add padding to move content lower */
+    margin: 0 auto; /* Center the container */
+    width: 100%; /* Full width */
+}

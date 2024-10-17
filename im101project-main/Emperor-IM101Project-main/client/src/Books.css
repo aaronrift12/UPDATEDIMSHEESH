@@ -1,0 +1,37 @@
+.sidebar {
+    height: 100vh; /* Full height for the sidebar */
+}
+
+.card {
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+.table {
+    margin-bottom: 0; /* Remove bottom margin to fit nicely inside card */
+}
+
+thead {
+    background-color: #343a40; /* Darker header */
+}
+
+.badge {
+    font-size: 1rem; /* Adjust font size for badges */
+}
+
+.btn-danger {
+    margin-left: 10px; /* Spacing between buttons */
+}
+
+
+.table th {
+    text-align: center;
+}
+
+.table td {
+    text-align: center;
+}
+
+.header {
+    background-color: #f8f9fa;
+}
